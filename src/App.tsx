@@ -3,6 +3,7 @@ import "./App.css";
 import bg from "./images/bg-svg.svg";
 import monkey from "./images/monkey.svg";
 import cloud from "./images/cloud.svg";
+import bananas from './images/banana.svg'
 import buttonSvg from "./images/button.svg";
 import backButton from "./images/back-button.svg";
 import nextButton from "./images/nextButton.svg";
@@ -15,6 +16,7 @@ import stopAudio from "./images/noAudio.svg";
 import sadMonkey from "./images/sad-monkey.svg";
 import Setting from "./components/Setting";
 import Star from './components/Star'
+import vector from './images/Vector 123.svg'
 
 type Screen =
   | "intro"
@@ -36,12 +38,20 @@ const App: React.FC = () => {
       case "intro":
         return (
           <div className="w-full h-full flex items-center justify-center">
-            <div className="relative">
+
+            <div className="relative ">
+            <img
+                src={vector}
+                alt="vector"
+                className="bottom-[-60px]  absolute right-[218px] z-1 "
+                style={{ pointerEvents: 'none' }}
+              />
               <img
                 src={monkey}
                 alt="Monkey"
-                className="translate-y-20 h-[550px] w-[550px]"
+                className="translate-y-20 h-[550px] w-full"
               />
+              
               <img
                 src={cloud}
                 alt="cloud"
@@ -54,6 +64,17 @@ const App: React.FC = () => {
                 
               </div>
             </div>
+            {(screen === "intro" || screen === "mizoIntro") && (
+        <>
+       
+          <div className="absolute top-10 right-20">
+            <Setting /> {/* Render the Setting component */}
+          </div>
+          <div className="absolute top-10 left-20">
+            <Star /> {/* Render the Star component */}
+          </div>
+        </>
+      )}
            
             <button
               onClick={() => {
@@ -74,6 +95,12 @@ const App: React.FC = () => {
         return (
           <div className="w-full h-full flex items-center justify-center">
             <div className="relative">
+            <img
+                src={vector}
+                alt="vector"
+                className="bottom-[-60px]  absolute right-[218px] z-1 "
+                style={{ pointerEvents: 'none' }}
+              />
               <img
                 src={monkey}
                 alt="Monkey"
@@ -90,6 +117,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
+            
             <button
               onClick={() => {
                 audioRef?.current?.play();
@@ -132,10 +160,12 @@ const App: React.FC = () => {
               />
               <div className="absolute -top-14 left-[300px] w-full">
                 <div className="absolute text-5xl font-extrabold top-12 left-12 text-[#11AEC6] w-full">
-                  Can you help me get some ?
+                  Can you help me get some <span className=" absolute  top-12 left-36 flex space-x-2 "><img  className="w-14 " src={bananas} alt="bananas"/>?</span> 
                 </div>
               </div>
             </div>
+
+         
             <button
               onClick={() => {
                 audioRef?.current?.play();
@@ -257,8 +287,18 @@ const App: React.FC = () => {
       <audio className="hidden" ref={audioRef} src="/audio/click.mp3" />
       <audio className="hidden" ref={bgAudioRef} src="/audio/bgm.mp3" />
       <div className="space-x-40 w-full">
-      <Setting/>
-      <Star/>
+      {(screen === "intro" || screen === "mizoIntro") && (
+        <>
+          <div>
+            <Setting /> {/* Render the Setting component */}
+          </div>
+          <div >
+            <Star /> {/* Render the Star component */}
+          </div>
+        </>
+      )}
+      {/* <Setting/>
+      <Star/> */}
       </div>
      
       <button className="fixed left-8 bottom-7" onClick={handleToggle}>
