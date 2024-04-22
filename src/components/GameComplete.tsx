@@ -10,11 +10,11 @@ type Props = { setScreen: any };
 const bananaPositions = [
   { top: "20%", left: "-10%" },
   { top: "50%", left: "-30%" },
-  { top: "70%", left: "100%" },
-  { top: "0%", left: "40%" },
-  { top: "40%", left: "115%" },
+  { top: "80%", left: "90%" },
+  { top: "5%", left: "40%" },
+  { top: "50%", left: "115%" },
   { top: "80%", left: "-10%" },
-  { top: "20%", left: "100%" },
+  { top: "20%", left: "90%" },
 ];
 
 const GameComplete = ({ setScreen }: Props) => {
