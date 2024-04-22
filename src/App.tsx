@@ -13,6 +13,8 @@ import GameComplete from "./components/GameComplete";
 import vol from "./images/volume.svg";
 import stopAudio from "./images/noAudio.svg";
 import sadMonkey from "./images/sad-monkey.svg";
+import Setting from "./components/Setting";
+import Star from './components/Star'
 
 type Screen =
   | "intro"
@@ -49,8 +51,10 @@ const App: React.FC = () => {
                 <div className="absolute text-5xl font-extrabold top-16 left-16 text-[#11AEC6] w-full">
                   Welcome Kiddo!
                 </div>
+                
               </div>
             </div>
+           
             <button
               onClick={() => {
                 audioRef?.current?.play();
@@ -63,6 +67,7 @@ const App: React.FC = () => {
                 className="absolute bottom-10 right-10 hover:scale-110 transition"
               />
             </button>
+         
           </div>
         );
       case "mizoIntro":
@@ -251,6 +256,11 @@ const App: React.FC = () => {
       {renderScreenContent()}
       <audio className="hidden" ref={audioRef} src="/audio/click.mp3" />
       <audio className="hidden" ref={bgAudioRef} src="/audio/bgm.mp3" />
+      <div className="space-x-40 w-full">
+      <Setting/>
+      <Star/>
+      </div>
+     
       <button className="fixed left-8 bottom-7" onClick={handleToggle}>
         {isPlaying ? (
           <img className="w-16 h-16 opacity-60" src={stopAudio} alt="" />
