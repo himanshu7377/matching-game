@@ -118,7 +118,7 @@ const Game = ({ setScreen }: Props) => {
       )}
       <div className=" flex gap-14">
         <div className="grid grid-cols-3 relative ">
-          {!selectedBlueCard && !selectedRedCard && completed.length == 0 && (
+          {!selectedBlueCard && !selectedRedCard && completed.length === 0 && (
             <div className="absolute -top-24 right-20 animate-bounce z-10">
               <img className="" src={arrowTop} alt="arrow" />
             </div>
@@ -149,7 +149,7 @@ const Game = ({ setScreen }: Props) => {
           })}
         </div>
         <div className="grid grid-cols-3 relative">
-          {selectedRedCard && !selectedBlueCard && completed.length == 0 && (
+          {selectedRedCard && !selectedBlueCard && completed.length === 0 && (
             <div className="absolute -bottom-24 left-20">
               <img className="animate-bounce" src={arrowBottom} alt="arrow" />
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import earned from "../images/earned.svg";
 import monkey from "../images/monkey.svg";
 import banana from "../images/banana.svg";
-import nextButton from "../images/nextButton.svg";
+
 import Loader from "./Loader";
 
 type Props = { setScreen: any };
