@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import blueCard from "../images/blue-card.svg";
 import redCard from "../images/redCard.svg";
 import "./Game.css";
-import Modal from "./Modal";
+
 import arrowTop from "../images/arrpw-top.svg";
 import arrowBottom from "../images/arrow-bottom.svg";
 import nextButton from "../images/next-button.svg";

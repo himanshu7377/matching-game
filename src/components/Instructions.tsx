@@ -45,11 +45,7 @@ const Instructions = () => {
           <div className="left-0 absolute w-14 h-14 rounded-r-2xl font-bold text-4xl text-white bottom-1/4 bg-[#A6CD25] flex items-center justify-center">
             02
           </div>
-          {/* <img
-            src={one}
-            alt="step one"
-            className="left-0 absolute bottom-1/4"
-          /> */}
+         
           <div className="mx-auto w-fit my-3 text-4xl font-extrabold text-center text-[#11AEC6]">
             Select a <br /> blue card
           </div>
